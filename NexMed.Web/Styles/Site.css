@@ -1,0 +1,62 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.wrap_main {
+    display: block;
+}
+
+.img-wrapper {
+    max-width: 100%;
+}
+
+.home_img {
+    background: url(../images/homeimg.jpg) no-repeat 50% 0%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 385px;
+    margin-top:10px;
+}
+
+.content {
+    min-height:300px;
+    text-align:center;
+}
+
+.sign_in {
+    background: url(../images/sign_in.png);
+    width: 375px;
+    height: 640px;
+    top: 0;
+    left: 50%;
+    margin: 0 auto;
+    margin-top: -190px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.sign_in form {    
+    margin-top:300px;
+}
+
+.sign_in a {
+    margin-left: 134px;
+}
+
+.sign_in form input {
+    margin: 6px 68px 20px;
+    width: 229px;
+    padding: 0 10px 0 10px;
+    background-repeat: no-repeat;
+    height: 30px;
+}
+
+.sign_in form .button {
+    background: #00bac9;
+    border-radius: 4px;
+    color: #f8f8f8;
+    padding: 0 6px;
+    margin: 10px 68px 20px;
+}
