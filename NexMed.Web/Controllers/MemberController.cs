@@ -1,4 +1,5 @@
-﻿using NexMed.Web.Filters;
+﻿using NexMed.Entities;
+using NexMed.Web.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace NexMed.Web.Controllers
         [RoleAuthorize(RoleTypes.Member)]
         public ActionResult Index()
         {
+            var user = (User)HttpContext.Items["User"];
+            ViewBag.User = user;
             return View();
         }
     }

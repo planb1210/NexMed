@@ -54,8 +54,14 @@ namespace NexMed.Web.Controllers
         }
         
         [HttpPost]
-        public ActionResult SignIn(string login, string password)
+        public ActionResult SignIn(string email, string password)
         {
+            NexMedContext db = new NexMedContext();
+            var user = db.Users.Where(x => x.Email == email && x.Password== getHash(password)).FirstOrDefault();
+            if (user != null) {
+                CookieUser.SetUser(user);
+                return RedirectToAction("Index", "Member");
+            }
             return View();
         }
 
