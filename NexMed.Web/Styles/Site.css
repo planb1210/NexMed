@@ -25,6 +25,10 @@
     text-align:center;
 }
 
+.hidden {
+    display:none;
+}
+/*------------------sigh in sign out------------------*/
 .sign_in {
     background: url(../images/sign_in.png);
     width: 375px;

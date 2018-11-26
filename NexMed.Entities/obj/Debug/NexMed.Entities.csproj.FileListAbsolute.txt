@@ -1,5 +1,6 @@
 D:\собеседования\тестовые задания\nexmed\NexMed.Entities\bin\Debug\NexMed.Entities.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Entities\bin\Debug\NexMed.Entities.pdb
+D:\собеседования\тестовые задания\nexmed\NexMed.Entities\obj\Debug\NexMed.Entities.csprojAssemblyReference.cache
 D:\собеседования\тестовые задания\nexmed\NexMed.Entities\obj\Debug\NexMed.Entities.csproj.CoreCompileInputs.cache
 D:\собеседования\тестовые задания\nexmed\NexMed.Entities\obj\Debug\NexMed.Entities.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Entities\obj\Debug\NexMed.Entities.pdb

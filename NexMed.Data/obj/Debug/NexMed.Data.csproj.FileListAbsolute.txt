@@ -114,9 +114,10 @@ D:\собеседования\тестовые задания\nexmed\NexMed.Data
 D:\собеседования\тестовые задания\nexmed\NexMed.Data\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\собеседования\тестовые задания\nexmed\NexMed.Data\bin\Debug\System.ValueTuple.xml
 D:\собеседования\тестовые задания\nexmed\NexMed.Data\obj\Debug\NexMed.Data.csprojAssemblyReference.cache
+D:\собеседования\тестовые задания\nexmed\NexMed.Data\obj\Debug\NexMed.Data.Migrations.Initial.resources
+D:\собеседования\тестовые задания\nexmed\NexMed.Data\obj\Debug\NexMed.Data.Migrations.Initial1.resources
+D:\собеседования\тестовые задания\nexmed\NexMed.Data\obj\Debug\NexMed.Data.csproj.GenerateResource.cache
 D:\собеседования\тестовые задания\nexmed\NexMed.Data\obj\Debug\NexMed.Data.csproj.CoreCompileInputs.cache
 D:\собеседования\тестовые задания\nexmed\NexMed.Data\obj\Debug\NexMed.Data.csproj.CopyComplete
 D:\собеседования\тестовые задания\nexmed\NexMed.Data\obj\Debug\NexMed.Data.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Data\obj\Debug\NexMed.Data.pdb
-D:\собеседования\тестовые задания\nexmed\NexMed.Data\obj\Debug\NexMed.Data.Migrations.Initial.resources
-D:\собеседования\тестовые задания\nexmed\NexMed.Data\obj\Debug\NexMed.Data.csproj.GenerateResource.cache

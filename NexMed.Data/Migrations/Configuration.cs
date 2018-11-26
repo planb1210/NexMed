@@ -1,23 +1,42 @@
 namespace NexMed.Data.Migrations
 {
-    using System;
-    using System.Data.Entity;
+    using NexMed.Entities;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<NexMed.Data.NexMedContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<NexMedContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(NexMed.Data.NexMedContext context)
+        protected override void Seed(NexMedContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            SeedCities(context);
+        }
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
+        private void SeedCities(NexMedContext context)
+        {
+            context.Cities.AddOrUpdate(x => x.Id, new City
+            {
+                Name = "Moscow",
+                Latitude = 55.755826,
+                Longitude = 37.617299900000035
+            });
+
+            context.Cities.AddOrUpdate(x => x.Id, new City
+            {
+                Name = "St. Petersburg",
+                Latitude = 59.9342802,
+                Longitude = 30.335098600000038
+            });
+
+            context.Cities.AddOrUpdate(x => x.Id, new City
+            {
+                Name = "Novosibirsk",
+                Latitude = 55.00835259999999,
+                Longitude = 82.93573270000002
+            });
         }
     }
 }

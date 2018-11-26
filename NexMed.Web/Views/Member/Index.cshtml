@@ -1,12 +1,33 @@
-﻿<div class="col-xs-6">
+﻿@model NexMed.Entities.City
+
+<div class="col-xs-6">
     <h2>
         User information
     </h2>
     <div class="col-xs-6">User Name</div>
-    <div class="col-xs-6">@ViewBag.User.Name</div>
+    <div class="col-xs-3">@ViewBag.User.Name</div>
+    <div class="col-xs-6">User Email</div>
+    <div class="col-xs-3">@ViewBag.User.Email</div>
+    <div class="col-xs-6">User City</div>
+    <div class="col-xs-3">@ViewBag.User.City</div>
 </div>
 <div class="col-xs-6">
     <h2>
         Weather information
     </h2>
+    <div class="col-xs-6">
+        @Html.DropDownListFor(model => model.Id, ViewBag.Cities as SelectList, new { id = "cities" })
+    </div>
+    <div class="col-xs-6">
+        <input class="button" id="getWeather" type="submit" value="Check">
+    </div>
+    <div class="col-xs-12 hidden" id="weather_info">
+        <div class="col-xs-6">Temperature</div>
+        <div class="col-xs-6" id="temperature"></div>
+        <div class="col-xs-6">Wind Speed</div>
+        <div class="col-xs-6" id="wind_speed"></div>
+        <div class="col-xs-6">Pressure</div>
+        <div class="col-xs-6" id="pressure"></div>
+    </div>
+    <div class="col-xs-12 hidden" id="weather_info_error">Weather error!</div>
 </div>

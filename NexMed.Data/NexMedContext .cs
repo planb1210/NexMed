@@ -7,9 +7,13 @@ namespace NexMed.Data
     {
         public DbSet<User> Users { get; set; }
 
+        public DbSet<City> Cities { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().HasKey(x => x.Id);
+
+            modelBuilder.Entity<City>().HasKey(x => x.Id);
         }
     }
 }

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NexMed.Entities", "NexMed.E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NexMed.Data", "NexMed.Data\NexMed.Data.csproj", "{3E601BE8-2D66-40CF-8ED2-0ED4AF1AA36D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NexMed.WeatherServices", "NexMed.WeatherServices\NexMed.WeatherServices.csproj", "{FF5C7B5E-2198-4BC0-B125-EA385535E1C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3E601BE8-2D66-40CF-8ED2-0ED4AF1AA36D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E601BE8-2D66-40CF-8ED2-0ED4AF1AA36D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E601BE8-2D66-40CF-8ED2-0ED4AF1AA36D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF5C7B5E-2198-4BC0-B125-EA385535E1C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF5C7B5E-2198-4BC0-B125-EA385535E1C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF5C7B5E-2198-4BC0-B125-EA385535E1C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF5C7B5E-2198-4BC0-B125-EA385535E1C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

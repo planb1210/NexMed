@@ -1,9 +1,5 @@
-D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
-D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\System.IO.Compression.dll
-D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\VBCSCompiler.exe
+D:\собеседования\тестовые задания\nexmed\NexMed.Web\obj\Debug\NexMed.Web.csprojAssemblyReference.cache
+D:\собеседования\тестовые задания\nexmed\NexMed.Web\obj\Debug\NexMed.Web.csproj.CoreCompileInputs.cache
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\ApplicationInsights.config
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\NexMed.Web.dll.config
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\NexMed.Web.dll
@@ -15,9 +11,13 @@ D:\собеседования\тестовые задания\nexmed\NexMed.Web\
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\csi.exe.config
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\csi.rsp
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\Microsoft.CodeAnalysis.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\Microsoft.Win32.Primitives.dll
@@ -27,6 +27,7 @@ D:\собеседования\тестовые задания\nexmed\NexMed.Web\
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\System.Diagnostics.Process.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\System.IO.Compression.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\System.IO.FileSystem.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
@@ -49,6 +50,7 @@ D:\собеседования\тестовые задания\nexmed\NexMed.Web\
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\vbc.exe
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\vbc.exe.config
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\vbc.rsp
+D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\VBCSCompiler.exe
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\roslyn\VBCSCompiler.exe.config
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\Microsoft.Win32.Primitives.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\netstandard.dll
@@ -148,6 +150,7 @@ D:\собеседования\тестовые задания\nexmed\NexMed.Web\
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\Antlr3.Runtime.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\EntityFramework.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\EntityFramework.SqlServer.dll
+D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\EntityFramework6.Npgsql.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\Microsoft.AI.Agent.Intercept.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\Microsoft.AI.DependencyCollector.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\Microsoft.AI.PerfCounterCollector.dll
@@ -161,6 +164,7 @@ D:\собеседования\тестовые задания\nexmed\NexMed.Web\
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\Newtonsoft.Json.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\NexMed.Data.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\NexMed.Entities.dll
+D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\NexMed.WeatherServices.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\Npgsql.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\System.Diagnostics.DiagnosticSource.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\System.Runtime.CompilerServices.Unsafe.dll
@@ -177,8 +181,11 @@ D:\собеседования\тестовые задания\nexmed\NexMed.Web\
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\NexMed.Data.pdb
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\NexMed.Data.dll.config
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\NexMed.Entities.pdb
+D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\NexMed.WeatherServices.pdb
+D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\NexMed.WeatherServices.dll.config
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\EntityFramework.xml
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\EntityFramework.SqlServer.xml
+D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\EntityFramework6.Npgsql.xml
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\Npgsql.pdb
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\Npgsql.xml
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\System.Runtime.CompilerServices.Unsafe.xml
@@ -206,10 +213,6 @@ D:\собеседования\тестовые задания\nexmed\NexMed.Web\
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\ru\System.Web.WebPages.resources.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\ru\System.Web.WebPages.Deployment.resources.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\ru\System.Web.WebPages.Razor.resources.dll
-D:\собеседования\тестовые задания\nexmed\NexMed.Web\obj\Debug\NexMed.Web.csprojAssemblyReference.cache
-D:\собеседования\тестовые задания\nexmed\NexMed.Web\obj\Debug\NexMed.Web.csproj.CoreCompileInputs.cache
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\obj\Debug\NexMed.Web.csproj.CopyComplete
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\obj\Debug\NexMed.Web.dll
 D:\собеседования\тестовые задания\nexmed\NexMed.Web\obj\Debug\NexMed.Web.pdb
-D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\EntityFramework6.Npgsql.dll
-D:\собеседования\тестовые задания\nexmed\NexMed.Web\bin\EntityFramework6.Npgsql.xml

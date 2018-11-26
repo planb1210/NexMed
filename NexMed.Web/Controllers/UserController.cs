@@ -41,8 +41,11 @@ namespace NexMed.Web.Controllers
             db.SaveChanges();
 
             var createdUser = db.Users.Where(x => x.Email == user.Email).First();
-
-            CookieUser.SetUser(createdUser);
+            if (createdUser != null)
+            {
+                CookieUser.SetUser(createdUser);
+                return RedirectToAction("Index", "Member");
+            }
 
             return View();
         }
@@ -57,7 +60,8 @@ namespace NexMed.Web.Controllers
         public ActionResult SignIn(string email, string password)
         {
             NexMedContext db = new NexMedContext();
-            var user = db.Users.Where(x => x.Email == email && x.Password== getHash(password)).FirstOrDefault();
+            var newPassword = getHash(password);
+            var user = db.Users.Where(x => x.Email == email && x.Password== newPassword).FirstOrDefault();
             if (user != null) {
                 CookieUser.SetUser(user);
                 return RedirectToAction("Index", "Member");
