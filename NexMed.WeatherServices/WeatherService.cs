@@ -11,9 +11,9 @@ namespace NexMed.WeatherServices
     {
         private IEnumerable<IWeatherService> weatherServices;
 
-        public WeatherService(IEnumerable<IWeatherService> allweatherService)
+        public WeatherService(IEnumerable<IWeatherService> allWeatherService)
         {
-            weatherServices = allweatherService;
+            weatherServices = allWeatherService;
         }
 
         public async Task<Weather> GetCityWeather(int cityId)

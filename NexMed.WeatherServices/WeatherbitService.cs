@@ -40,19 +40,19 @@ namespace NexMed.WeatherServices
                 var response = await client.GetAsync(url);
                 var responseString = await response.Content.ReadAsStringAsync();
 
-                return ParseJsonToWeather(responseString, city.Name);
+                return ParseJsonToWeather(responseString, city);
             }
             return null;
         }
 
-        private Weather ParseJsonToWeather(string json, string city)
+        private Weather ParseJsonToWeather(string json, City city)
         {
             var weather = JsonConvert.DeserializeObject<WeatherbitModel>(json);
             if (weather.Data != null)
             {
                 return new Weather()
                 {
-                    CityName = city,
+                    City = city,
                     Pressure = weather.Data[0].Pres,
                     Temperature = weather.Data[0].Temp,
                     WindSpeed = weather.Data[0].Wind_spd

@@ -10,7 +10,7 @@ namespace NexMed.Entities
     {
         public int Id { get; set; }
 
-        public string CityName { get; set; }
+        public City City { get; set; }
 
         public string Temperature { get; set; }
 

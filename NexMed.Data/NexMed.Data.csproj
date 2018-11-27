@@ -68,6 +68,14 @@
     <Compile Include="Migrations\201811271238157_Initial.Designer.cs">
       <DependentUpon>201811271238157_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811271549046_Initial1.cs" />
+    <Compile Include="Migrations\201811271549046_Initial1.Designer.cs">
+      <DependentUpon>201811271549046_Initial1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811271646013_Initial2.cs" />
+    <Compile Include="Migrations\201811271646013_Initial2.Designer.cs">
+      <DependentUpon>201811271646013_Initial2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NexMedContext .cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,6 +95,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201811271238157_Initial.resx">
       <DependentUpon>201811271238157_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811271549046_Initial1.resx">
+      <DependentUpon>201811271549046_Initial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811271646013_Initial2.resx">
+      <DependentUpon>201811271646013_Initial2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
