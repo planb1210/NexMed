@@ -2,7 +2,7 @@
     <form action="/User/SignUp" method="post">
         <input id="name" name="name" placeholder="Name" maxlength="250" type="text" value="" required>
         <input id="email" name="email" placeholder="E-mail" maxlength="250" type="email" value="" required>
-        <input id="city" name="city" placeholder="City" maxlength="250" type="text" value="" required>
+        @Html.DropDownList("city", ViewBag.Cities as SelectList)
         <input id="password1" name="password1" placeholder="Password" maxlength="250" type="password" value="" required>
         <input id="password2" name="password2" placeholder="Password" maxlength="250" type="password" value="" required>
         <input class="button" type="submit" value="Sign Up">

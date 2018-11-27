@@ -3,6 +3,8 @@ using System.Web.Mvc;
 using NexMed.Data;
 using System.Data.Entity;
 using Autofac.Integration.Mvc;
+using NexMed.WeatherServices;
+using System.Collections.Generic;
 
 namespace NexMed.Web.App_Start
 {
@@ -16,7 +18,16 @@ namespace NexMed.Web.App_Start
 
             builder.RegisterType<NexMedContext>().AsSelf();
 
+            builder.RegisterType<DarkskyService>().As<IWeatherService>();
+            builder.RegisterType<WeatherbitService>().As<IWeatherService>();
+            builder.RegisterType<WeatherService>().AsSelf();
+
             var container = builder.Build();
+
+            using (var scope = container.BeginLifetimeScope())
+            {
+                var allweatherService = scope.Resolve<IEnumerable<IWeatherService>>();
+            }
 
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
         }

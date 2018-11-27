@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace NexMed.Web
 {
@@ -14,8 +13,10 @@ namespace NexMed.Web
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/common").Include(
-                        "~/Scripts/Common/validator.js"));
+            bundles.Add(new ScriptBundle("~/bundles/common")
+                .Include("~/Scripts/Common/Validator.js")
+                .Include("~/Scripts/Common/Weather.js")
+                .Include("~/Scripts/Common/Main.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));

@@ -2,21 +2,27 @@
 using NexMed.Entities;
 using NexMed.Web.Filters;
 using NexMed.Web.Helpers;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Web;
 using System.Web.Mvc;
 
 namespace NexMed.Web.Controllers
 {
     public class UserController : Controller
     {
+        private NexMedContext db;
+
+        public UserController(NexMedContext context)
+        {
+            db = context;
+        }
+
         [HttpGet]
         public ActionResult SignUp()
         {
+            SelectList cities = new SelectList(db.Cities, "Id", "Name");
+            ViewBag.Cities = cities;
             return View();
         }
 
@@ -29,13 +35,13 @@ namespace NexMed.Web.Controllers
                 return RedirectToAction("404", "Error");
             }
 
-            NexMedContext db = new NexMedContext();
             var isUserSet = db.Users.Where(x => x.Email == user.Email).Any();
             if (isUserSet) {
                 return View();
             }
 
-            User newUser = new User() { City = user.City, Email = user.Email, Name = user.Name, Password = password1, Role = (int)RoleTypes.Member };
+            var city = db.Cities.Where(x => x.Id == user.City).First();
+            var newUser = new User() { City = city, Email = user.Email, Name = user.Name, Password = password1, Role = (int)RoleTypes.Member };
             
             db.Users.Add(newUser);
             db.SaveChanges();
@@ -59,7 +65,6 @@ namespace NexMed.Web.Controllers
         [HttpPost]
         public ActionResult SignIn(string email, string password)
         {
-            NexMedContext db = new NexMedContext();
             var newPassword = getHash(password);
             var user = db.Users.Where(x => x.Email == email && x.Password== newPassword).FirstOrDefault();
             if (user != null) {

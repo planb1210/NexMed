@@ -12,7 +12,7 @@ namespace NexMed.Entities
 
         public string Email { get; set; }
 
-        public string City { get; set; }
+        public int City { get; set; }
 
         public string Password1 { get; set; }
 

@@ -194,7 +194,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\homeimg.jpg" />
-    <Content Include="Scripts\Common\validator.js" />
+    <Content Include="Scripts\Common\Main.js" />
+    <Content Include="Scripts\Common\Validator.js" />
+    <Content Include="Scripts\Common\Weather.js" />
     <Content Include="Styles\bootstrap-theme.css" />
     <Content Include="Styles\bootstrap-theme.min.css" />
     <Content Include="Styles\bootstrap.css" />

@@ -49,7 +49,7 @@
     margin-left: 134px;
 }
 
-.sign_in form input {
+.sign_in form input,.sign_in form select {
     margin: 6px 68px 20px;
     width: 229px;
     padding: 0 10px 0 10px;

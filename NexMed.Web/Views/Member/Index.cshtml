@@ -1,6 +1,4 @@
-﻿@model NexMed.Entities.City
-
-<div class="col-xs-6">
+﻿<div class="col-xs-6">
     <h2>
         User information
     </h2>
@@ -8,15 +6,13 @@
     <div class="col-xs-3">@ViewBag.User.Name</div>
     <div class="col-xs-6">User Email</div>
     <div class="col-xs-3">@ViewBag.User.Email</div>
-    <div class="col-xs-6">User City</div>
-    <div class="col-xs-3">@ViewBag.User.City</div>
 </div>
 <div class="col-xs-6">
     <h2>
         Weather information
     </h2>
     <div class="col-xs-6">
-        @Html.DropDownListFor(model => model.Id, ViewBag.Cities as SelectList, new { id = "cities" })
+        @Html.DropDownList("cities", ViewBag.Cities as SelectList)
     </div>
     <div class="col-xs-6">
         <input class="button" id="getWeather" type="submit" value="Check">
