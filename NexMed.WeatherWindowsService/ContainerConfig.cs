@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using NexMed.Data;
+using NexMed.Messaging;
 using NexMed.WeatherServices;
 using System.Collections.Generic;
 
@@ -12,6 +13,7 @@ namespace NexMed.WeatherWindowsService
             var builder = new ContainerBuilder();
 
             builder.RegisterType<NexMedContext>().AsSelf();
+            builder.RegisterType<MessageService>().AsSelf();
 
             builder.RegisterType<DarkskyService>().As<IWeatherService>();
             builder.RegisterType<WeatherbitService>().As<IWeatherService>();

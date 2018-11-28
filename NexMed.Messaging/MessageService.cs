@@ -11,8 +11,8 @@ namespace NexMed.Messaging
 {
     public class MessageService
     {
-        private readonly string emailFrom = "eisbrecher007@mail.ru";
-        private readonly string emailPassword = "u356tMbF";
+        private readonly string emailFrom = "test@test.ru";
+        private readonly string emailPassword = "test";
 
         public void SendEmail(string emailTo, Weather weather)
         {
@@ -20,7 +20,7 @@ namespace NexMed.Messaging
             MailAddress to = new MailAddress(emailTo);
             MailMessage m = new MailMessage(from, to);
             m.Subject = "Weather Info";
-            m.Body = $"<h2>New Weather</h2><div>Temperature {weather.Temperature}</div>div>Wind Speed {weather.WindSpeed}</div>div>Pressure {weather.Pressure}</div>";
+            m.Body = $"<h2>New Weather</h2><div>Temperature {weather.Temperature}</div><div>Wind Speed {weather.WindSpeed}</div><div>Pressure {weather.Pressure}</div>";
             m.IsBodyHtml = true;
 
             SmtpClient smtp = new SmtpClient("smtp.mail.ru", 25);

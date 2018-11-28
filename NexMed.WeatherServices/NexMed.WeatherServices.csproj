@@ -50,13 +50,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DarkskyService.cs" />
-    <Compile Include="IWeatherService.cs" />
+    <Compile Include="ExternalWeatherService\DarkskyService.cs" />
+    <Compile Include="ExternalWeatherService\IWeatherService.cs" />
     <Compile Include="Models\DarkskyModel.cs" />
     <Compile Include="Models\WeatherbitModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateWeatherService.cs" />
     <Compile Include="WeatherService.cs" />
-    <Compile Include="WeatherbitService.cs" />
+    <Compile Include="ExternalWeatherService\WeatherbitService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NexMed.Data\NexMed.Data.csproj">
@@ -66,6 +67,10 @@
     <ProjectReference Include="..\NexMed.Entities\NexMed.Entities.csproj">
       <Project>{c58d85d3-bd32-4f60-9d48-32cf8b5866d4}</Project>
       <Name>NexMed.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NexMed.Messaging\NexMed.Messaging.csproj">
+      <Project>{30fe8cdf-41c7-454d-a508-692c8ad8faa3}</Project>
+      <Name>NexMed.Messaging</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

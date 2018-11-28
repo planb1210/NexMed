@@ -2,6 +2,7 @@
 using NexMed.Entities;
 using NexMed.WeatherServices;
 using NexMed.Web.Filters;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
@@ -32,8 +33,14 @@ namespace NexMed.Web.Controllers
         [HttpPost]
         public async Task<ActionResult> GetWeather(int cityId)
         {
-            var weather = await weatherServices.GetCityWeather(cityId);
-            return Json(weather);
+            var city = db.Cities.Where(x => x.Id == cityId).FirstOrDefault();
+
+            if (city != null)
+            {
+                var weather = await weatherServices.GetCityWeather(city);
+                return Json(weather);
+            }
+            return Json(null);
         }
     }
 }

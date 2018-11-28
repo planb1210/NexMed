@@ -16,11 +16,11 @@ namespace NexMed.WeatherServices
             weatherServices = allWeatherService;
         }
 
-        public async Task<Weather> GetCityWeather(int cityId)
+        public async Task<Weather> GetCityWeather(City city)
         {
             foreach (var service in weatherServices)
             {
-                var weather = await service.GetCityWeather(cityId);
+                var weather = await service.GetCityWeather(city);
                 if (weather != null) {
                     return weather;
                 }
