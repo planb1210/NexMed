@@ -188,6 +188,7 @@
     </Compile>
     <Compile Include="Helpers\CookieExtensions.cs" />
     <Compile Include="Helpers\CookieUser.cs" />
+    <Compile Include="Helpers\HttpContextExtensions.cs" />
     <Compile Include="Models\UserRegisterModel.cs" />
     <Compile Include="Modules\UserContextModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -262,6 +263,10 @@
     <ProjectReference Include="..\NexMed.Entities\NexMed.Entities.csproj">
       <Project>{c58d85d3-bd32-4f60-9d48-32cf8b5866d4}</Project>
       <Name>NexMed.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NexMed.Services\NexMed.Services.csproj">
+      <Project>{3838d195-62dd-4332-aadf-b84e78c56594}</Project>
+      <Name>NexMed.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\NexMed.WeatherServices\NexMed.WeatherServices.csproj">
       <Project>{ff5c7b5e-2198-4bc0-b125-ea385535e1c1}</Project>

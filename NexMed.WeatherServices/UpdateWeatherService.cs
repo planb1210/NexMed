@@ -13,15 +13,15 @@ namespace NexMed.WeatherServices
     public class UpdateWeatherService
     {
         private NexMedContext db;
-        private MessageService ms;
-        private WeatherService ws;
+        private MailService mailService;
+        private WeatherService weatherService;
         private CancellationTokenSource cancelTokenSource;
 
-        public UpdateWeatherService(NexMedContext Db, MessageService Ms, WeatherService Ws)
+        public UpdateWeatherService(NexMedContext Db, MailService MailService, WeatherService WeatherService)
         {
             db = Db;
-            ms = Ms;
-            ws = Ws;
+            mailService = MailService;
+            weatherService = WeatherService;
         }
 
         public void StartObservation()
@@ -30,7 +30,7 @@ namespace NexMed.WeatherServices
             CancellationToken token = cancelTokenSource.Token;
             TimeSpan interval = new TimeSpan(1000);
 
-            RunPeriodicallyAsync(WeatherObserver, interval, token);
+            RunPeriodicallyAsync(interval, token);
         }
 
         public void StopObservation()
@@ -38,23 +38,27 @@ namespace NexMed.WeatherServices
             cancelTokenSource.Cancel();
         }
 
-        private async Task RunPeriodicallyAsync(Func<Task> func, TimeSpan interval, CancellationToken cancellationToken)
+        private async Task RunPeriodicallyAsync(TimeSpan interval, CancellationToken cancellationToken)
         {
             while (!cancellationToken.IsCancellationRequested)
             {
                 await Task.Delay(interval, cancellationToken);
-                await func();
-            }
+                await WeatherObserver(cancellationToken);
+             }
         }
 
-        private async Task WeatherObserver()
+        private async Task WeatherObserver(CancellationToken cancellationToken)
         {
             var cities = db.Cities.ToList();
            
             foreach (var city in cities)
             {
-                var weather = await ws.GetCityWeather(city);
-                var currentWeather = db.Weathers.Where(x => x.City.Id == weather.City.Id).FirstOrDefault();
+                if (cancellationToken.IsCancellationRequested)
+                {
+                    break;
+                }
+                var weather = await weatherService.GetCityWeather(city);
+                var currentWeather = db.Weathers.FirstOrDefault(x => x.City.Id == weather.City.Id);
                 if (currentWeather != null)
                 {
                     if (weather.Pressure != currentWeather.Pressure || weather.Temperature != currentWeather.Temperature || weather.WindSpeed != currentWeather.WindSpeed)
@@ -64,7 +68,7 @@ namespace NexMed.WeatherServices
                         currentWeather.WindSpeed = weather.WindSpeed;
                         db.SaveChanges();
                         var usersWithCity = db.Users.Where(x => x.City.Id == currentWeather.City.Id).ToList();
-                        ms.SendEmails(usersWithCity, currentWeather);
+                        mailService.SendEmails(usersWithCity, currentWeather);
                     }
                 }
                 else
@@ -72,7 +76,7 @@ namespace NexMed.WeatherServices
                     db.Weathers.Add(weather);
                     db.SaveChanges();
                     var usersWithCity = db.Users.Where(x => x.City.Id == weather.City.Id).ToList();
-                    ms.SendEmails(usersWithCity, weather);
+                    mailService.SendEmails(usersWithCity, weather);
                 }
             }
         }

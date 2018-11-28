@@ -1,6 +1,6 @@
-﻿using NexMed.Entities;
+﻿using NexMed.Data;
+using NexMed.Entities;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
@@ -11,21 +11,18 @@ namespace NexMed.Web.Helpers
         public static void SetUser(User user)
         {
             HttpContext.Current.Request.SetCookie(HttpContext.Current.Response, "nm_user_id", user.Id.ToString());
-            HttpContext.Current.Request.SetCookie(HttpContext.Current.Response, "nm_user_name", user.Name.ToString());
-            HttpContext.Current.Request.SetCookie(HttpContext.Current.Response, "nm_user_email", user.Email.ToString());
-            HttpContext.Current.Request.SetCookie(HttpContext.Current.Response, "nm_user_role", user.Role.ToString());
         }
 
         public static User GetUser()
         {
-            var user = new User()
+            var id = Convert.ToInt32(HttpContext.Current.Request.GetCookieValue("nm_user_id"));
+            NexMedContext db = new NexMedContext();
+            var user = db.Users.Where(x => x.Id == id).FirstOrDefault();
+            if (user != null)
             {
-                Id = Convert.ToInt32(HttpContext.Current.Request.GetCookieValue("nm_user_id")),
-                Name = HttpContext.Current.Request.GetCookieValue("nm_user_name"),
-                Email = HttpContext.Current.Request.GetCookieValue("nm_user_email"),
-                Role = Convert.ToInt32(HttpContext.Current.Request.GetCookieValue("nm_user_role"))
-            };
-            return user;
+                return user;
+            }
+            return null;
         }
     }
 }

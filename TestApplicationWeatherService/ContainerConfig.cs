@@ -13,7 +13,7 @@ namespace TestApplicationWeatherService
             var builder = new ContainerBuilder();
 
             builder.RegisterType<NexMedContext>().AsSelf();
-            builder.RegisterType<MessageService>().AsSelf();
+            builder.RegisterType<MailService>().AsSelf();
 
             builder.RegisterType<DarkskyService>().As<IWeatherService>();
             builder.RegisterType<WeatherbitService>().As<IWeatherService>();

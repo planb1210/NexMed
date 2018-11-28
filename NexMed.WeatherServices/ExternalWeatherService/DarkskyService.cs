@@ -13,16 +13,9 @@ namespace NexMed.WeatherServices
     {
         private const string aPIKey = "a3f13c1314c1c3bbc71133199697a8f2";
 
-        private readonly string httpUrl = "https://api.darksky.net/forecast";
+        private const string httpUrl = "https://api.darksky.net/forecast";
 
-        private static readonly HttpClient client = new HttpClient();
-
-        private NexMedContext db;
-
-        public DarkskyService(NexMedContext context)
-        {
-            db = context;
-        }
+        private readonly HttpClient client = new HttpClient();
 
         public async Task<Weather> GetCityWeather(City city)
         {
@@ -31,10 +24,11 @@ namespace NexMed.WeatherServices
 
             var url = $"{httpUrl}/{aPIKey}/{lat},{lon}";
 
-            var response = await client.GetAsync(url);
-            var responseString = await response.Content.ReadAsStringAsync();
-
-            return ParseJsonToWeather(responseString, city);
+            using (var response = await client.GetAsync(url))
+            {
+                var responseString = await response.Content.ReadAsStringAsync();
+                return ParseJsonToWeather(responseString, city);
+            }
         }
 
         private Weather ParseJsonToWeather(string json, City city)

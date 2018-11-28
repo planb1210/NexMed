@@ -1,10 +1,10 @@
 ﻿using Autofac;
 using System.Web.Mvc;
 using NexMed.Data;
-using System.Data.Entity;
 using Autofac.Integration.Mvc;
 using NexMed.WeatherServices;
 using System.Collections.Generic;
+using NexMed.Services;
 
 namespace NexMed.Web.App_Start
 {
@@ -17,6 +17,8 @@ namespace NexMed.Web.App_Start
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
 
             builder.RegisterType<NexMedContext>().AsSelf();
+            builder.RegisterType<UserService>().AsSelf();
+            builder.RegisterType<CityService>().AsSelf();
 
             builder.RegisterType<DarkskyService>().As<IWeatherService>();
             builder.RegisterType<WeatherbitService>().As<IWeatherService>();

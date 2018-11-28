@@ -1,7 +1,9 @@
 ﻿using NexMed.Data;
 using NexMed.Entities;
+using NexMed.Services;
 using NexMed.WeatherServices;
 using NexMed.Web.Filters;
+using NexMed.Web.Helpers;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -10,22 +12,22 @@ namespace NexMed.Web.Controllers
 {
     public class MemberController : Controller
     {
-        private NexMedContext db;
+        private CityService cityService;
         private WeatherService weatherServices;
 
-        public MemberController(NexMedContext context, WeatherService WeatherServices)
+        public MemberController(CityService cService, WeatherService WeatherServices)
         {
-            db = context;
+            cityService = cService;
             weatherServices = WeatherServices;
         }
 
         [RoleAuthorize(RoleTypes.Member)]
         public ActionResult Index()
         {
-            var user = (User)HttpContext.Items["User"];
+            var user = HttpContext.GetUser();
             ViewBag.User = user;
 
-            SelectList cities = new SelectList(db.Cities, "Id", "Name");
+            SelectList cities = new SelectList(cityService.GetCities(), "Id", "Name");
             ViewBag.Cities = cities;
             return View();
         }
@@ -33,7 +35,7 @@ namespace NexMed.Web.Controllers
         [HttpPost]
         public async Task<ActionResult> GetWeather(int cityId)
         {
-            var city = db.Cities.Where(x => x.Id == cityId).FirstOrDefault();
+            var city = cityService.GetCity(cityId);
 
             if (city != null)
             {

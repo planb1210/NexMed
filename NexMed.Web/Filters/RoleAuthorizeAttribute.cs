@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using NexMed.Entities;
+using NexMed.Web.Helpers;
 
 namespace NexMed.Web.Filters
 {
@@ -13,11 +13,15 @@ namespace NexMed.Web.Filters
         {
             this.permissions = permissions;
         }
-       
+
         protected override bool AuthorizeCore(HttpContextBase httpContext)
         {
-            var user = (User)httpContext.Items["User"];
-            return permissions.Where(x => (int)x == user.Role).Any();
+            var user = httpContext.GetUser();
+            if (user != null)
+            {
+                return permissions.Where(x => (int)x == user.Role).Any();
+            }
+            return false;
         }
     }
 }

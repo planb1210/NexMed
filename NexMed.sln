@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NexMed.WeatherWindowsServic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApplicationWeatherService", "TestApplicationWeatherService\TestApplicationWeatherService.csproj", "{3961716D-DE95-4DE9-A2A7-4EDC5B0FDD7A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NexMed.Services", "NexMed.Services\NexMed.Services.csproj", "{3838D195-62DD-4332-AADF-B84E78C56594}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{3961716D-DE95-4DE9-A2A7-4EDC5B0FDD7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3961716D-DE95-4DE9-A2A7-4EDC5B0FDD7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3961716D-DE95-4DE9-A2A7-4EDC5B0FDD7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3838D195-62DD-4332-AADF-B84E78C56594}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3838D195-62DD-4332-AADF-B84E78C56594}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3838D195-62DD-4332-AADF-B84E78C56594}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3838D195-62DD-4332-AADF-B84E78C56594}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

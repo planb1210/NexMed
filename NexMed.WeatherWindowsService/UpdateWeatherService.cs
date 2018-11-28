@@ -10,7 +10,7 @@ namespace NexMed.WeatherWindowsService
 {
     public partial class UpdateWeatherService : ServiceBase
     {
-        private MessageService ms;
+        private MailService ms;
         private NexMedContext db;
         private WeatherService ws;
         private NexMed.WeatherServices.UpdateWeatherService updateWeatherService;
@@ -20,7 +20,7 @@ namespace NexMed.WeatherWindowsService
             InitializeComponent();
             
             IContainer countainer = ContainerConfig.ConfigureContainer();
-            var ms = countainer.Resolve<MessageService>();
+            var ms = countainer.Resolve<MailService>();
             var db = countainer.Resolve<NexMedContext>();
             var ws = countainer.Resolve<WeatherService>();
             updateWeatherService = new NexMed.WeatherServices.UpdateWeatherService(db, ms, ws);            

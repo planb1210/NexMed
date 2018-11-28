@@ -15,16 +15,9 @@ namespace NexMed.WeatherServices
     {
         private const string aPIKey = "58c2500edd1b4308aa4bf5063a7fcb03";
 
-        private readonly string httpUrl = "http://api.weatherbit.io/v2.0/current";
+        private const string httpUrl = "http://api.weatherbit.io/v2.0/current";
 
-        private static readonly HttpClient client = new HttpClient();
-
-        private NexMedContext db;
-
-        public WeatherbitService(NexMedContext context)
-        {
-            db = context;
-        }
+        private readonly HttpClient client = new HttpClient();
 
         public async Task<Weather> GetCityWeather(City city)
         {
@@ -33,10 +26,11 @@ namespace NexMed.WeatherServices
 
             var url = $"{httpUrl}?key={aPIKey}&lat={lat}&lon={lon}";
 
-            var response = await client.GetAsync(url);
-            var responseString = await response.Content.ReadAsStringAsync();
-
-            return ParseJsonToWeather(responseString, city);
+            using (var response = await client.GetAsync(url))
+            {
+                var responseString = await response.Content.ReadAsStringAsync();
+                return ParseJsonToWeather(responseString, city);
+            }            
         }
 
         private Weather ParseJsonToWeather(string json, City city)

@@ -7,10 +7,8 @@ namespace NexMed.Web.Filters
 {
     public enum RoleTypes
     {
-        Noone,
+        Member = 1,
 
-        Member,
-
-        Admin
+        Admin = 2
     }
 }

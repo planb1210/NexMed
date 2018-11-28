@@ -15,7 +15,7 @@ namespace TestApplicationWeatherService
         static void Main(string[] args)
         {
             IContainer countainer = ContainerConfig.ConfigureContainer();
-            var ms = countainer.Resolve<MessageService>();
+            var ms = countainer.Resolve<MailService>();
             var db = countainer.Resolve<NexMedContext>();
             var ws = countainer.Resolve<WeatherService>();
 

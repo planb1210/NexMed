@@ -1,27 +1,27 @@
 ﻿using NexMed.Data;
 using NexMed.Entities;
+using NexMed.Services;
 using NexMed.Web.Filters;
 using NexMed.Web.Helpers;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using System.Web.Mvc;
 
 namespace NexMed.Web.Controllers
 {
     public class UserController : Controller
     {
-        private NexMedContext db;
+        private UserService userService;
+        private CityService cityService;
 
-        public UserController(NexMedContext context)
+        public UserController(UserService uService, CityService cService)
         {
-            db = context;
+            userService = uService;
+            cityService = cService;
         }
 
         [HttpGet]
         public ActionResult SignUp()
         {
-            SelectList cities = new SelectList(db.Cities, "Id", "Name");
+            SelectList cities = new SelectList(cityService.GetCities(), "Id", "Name");
             ViewBag.Cities = cities;
             return View();
         }
@@ -29,24 +29,18 @@ namespace NexMed.Web.Controllers
         [HttpPost]
         public ActionResult SignUp(UserRegisterModel user)
         {
-            var password1 = getHash(user.Password1);
-            var password2 = getHash(user.Password2);
-            if (password1 != password2) {
-                return RedirectToAction("404", "Error");
+            if (user.Password1 != user.Password2)
+            {
+                return HttpNotFound();
             }
 
-            var isUserSet = db.Users.Where(x => x.Email == user.Email).Any();
-            if (isUserSet) {
+            var isUserSet = userService.IsUserSet(user.Email);
+            if (isUserSet)
+            {
                 return View();
             }
 
-            var city = db.Cities.Where(x => x.Id == user.City).First();
-            var newUser = new User() { City = city, Email = user.Email, Name = user.Name, Password = password1, Role = (int)RoleTypes.Member };
-            
-            db.Users.Add(newUser);
-            db.SaveChanges();
-
-            var createdUser = db.Users.Where(x => x.Email == user.Email).First();
+            var createdUser = userService.SetUser(user.City, user.Email, user.Name, user.Password1, (int)RoleTypes.Member);
             if (createdUser != null)
             {
                 CookieUser.SetUser(createdUser);
@@ -65,20 +59,13 @@ namespace NexMed.Web.Controllers
         [HttpPost]
         public ActionResult SignIn(string email, string password)
         {
-            var newPassword = getHash(password);
-            var user = db.Users.Where(x => x.Email == email && x.Password== newPassword).FirstOrDefault();
-            if (user != null) {
+            var user = userService.GetUser(email, password);
+            if (user != null)
+            {
                 CookieUser.SetUser(user);
                 return RedirectToAction("Index", "Member");
             }
             return View();
-        }
-
-        private string getHash(string value)
-        {
-            byte[] hash = Encoding.UTF8.GetBytes(value);
-            MD5 md5 = new MD5CryptoServiceProvider();
-            return Encoding.UTF8.GetString(md5.ComputeHash(hash));
         }
     }
 }
